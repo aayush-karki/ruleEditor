@@ -1,0 +1,32 @@
+{
+    "operator": "AND",
+    "conditions":[
+        {
+        "operator": "AND",
+        "conditions":[
+                { 
+                    "operator": "AND",
+                    "conditions": [
+                        a, 
+                        {
+                            "operator": "OR",
+                            "conditions": [
+                                b, 
+                                c 
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "operator": "AND",
+                    "conditions": [
+                    d,
+                   e 
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+{ { { a AND { b or c }} AND { d AND e }} AND f}

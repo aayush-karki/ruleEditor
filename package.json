@@ -1,0 +1,13 @@
+{
+	"name": "rules",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node ./bin/www"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"morgan": "^1.10.0",
+		"pug": "^3.0.2"
+	}
+}

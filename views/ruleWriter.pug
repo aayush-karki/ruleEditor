@@ -1,0 +1,52 @@
+//- @filename: ruleWriter.pug
+//- @page
+//- ruleWriter page
+
+extends layout
+
+block append scripts
+	script( src="ruleWriter.js" defer)
+	link( rel="stylesheet" href="ruleWriter.css")
+
+block content
+	.main
+		h1 Rules
+		.buttons
+			button#loadBtn.btn.btn_load Load
+			button#exportBtn.btn.btn_export Export
+
+		form.rules_container
+			ul.rule_conditions
+				li.rule_condition
+					input.field_data.field_type(type="text", placeholder="field type" value="script")
+					input.field_data.field_operator(type="text", placeholder="field type" value="Equal")
+					input.field_data.field_value(type="text", placeholder="field type" value="10.10.1.1")
+				li.rule_operator AND
+				ul.rule_conditions
+					li.rule_condition
+						input.field_data.field_type(type="text", placeholder="field type" value="dstip")
+						input.field_data.field_operator(type="text", placeholder="field type" value="Equal")
+						input.field_data.field_value(type="text", placeholder="field type" value="10.10.1.5")
+					li.rule_operator OR
+					li.rule_condition 
+						.field_type port
+						.field_operator Equal
+						.field_value 2
+				li.rule_operator AND
+				ul.rule_conditions
+					li.rule_condition 
+						.field_type sentbyte
+						.field_operator Equal
+						.field_value 50
+
+					li.rule_operator AND
+					li.rule_condition 
+						.field_type rcvdbyte
+						.field_operator Equal
+						.field_value 30
+
+				li.rule_operator AND
+				li.rule_condition 
+					.field_type user
+					.field_operator Equal
+					.field_value saksham

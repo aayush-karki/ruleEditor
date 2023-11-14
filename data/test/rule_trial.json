@@ -1,0 +1,54 @@
+{
+    "operator": "AND",
+    "conditions": [
+     a, 
+      {
+        "operator": "OR",
+        "conditions": [
+          b, 
+          c 
+        ]
+      }, 
+      {
+        "operator": "AND",
+        "conditions": [
+          d,
+         e 
+        ]
+      }, 
+      f
+    ]
+  }
+  
+  
+  (a && (b || C) && (d && e) && f )  || g
+  a || ( (b || C) && (d && e) && f)
+  
+  {
+    "operator": "OR",
+    "conditions": [
+     a, 
+      {
+          "operator": "and",
+          "conditions": [
+          {
+              "operator": "OR",
+              "conditions": [
+                  b, 
+                  c 
+              ]
+          }, 
+        {
+            "operator": "AND",
+            "conditions": [
+            d,
+            e 
+            ]
+        }, 
+        f
+        ] 
+      }
+    ]
+  }
+
+  
