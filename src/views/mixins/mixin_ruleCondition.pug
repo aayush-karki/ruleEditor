@@ -1,0 +1,9 @@
+//- @filename: mixin_ruleCondition.pug
+//- @mixin
+//- rule condition component that contains field type, field operator, and  field value
+
+mixin mixin_ruleCondition(fieldType="", fieldOperator="", fieldValue="")
+  li.rule_condition
+    input.field_data.field_type(type="text", placeholder="field type" value=fieldType)
+    input.field_data.field_operator(type="text", placeholder="field operator" value=fieldOperator)
+    input.field_data.field_value(type="text", placeholder="field value" value=fieldValue)

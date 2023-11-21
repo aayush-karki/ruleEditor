@@ -4,6 +4,8 @@
 
 extends layout
 
+include ..\mixins\mixin_ruleCondition.pug
+
 block append scripts
 	script( src="ruleWriter.js" defer)
 	link( rel="stylesheet" href="ruleWriter.css")
@@ -17,36 +19,17 @@ block content
 
 		form.rules_container
 			ul.rule_conditions
-				li.rule_condition
-					input.field_data.field_type(type="text", placeholder="field type" value="script")
-					input.field_data.field_operator(type="text", placeholder="field type" value="Equal")
-					input.field_data.field_value(type="text", placeholder="field type" value="10.10.1.1")
+				+mixin_ruleCondition("script","Equal","10.10.1.1")
 				li.rule_operator AND
 				ul.rule_conditions
-					li.rule_condition
-						input.field_data.field_type(type="text", placeholder="field type" value="dstip")
-						input.field_data.field_operator(type="text", placeholder="field type" value="Equal")
-						input.field_data.field_value(type="text", placeholder="field type" value="10.10.1.5")
+					+mixin_ruleCondition("dstip","Equal","10.10.1.5")
 					li.rule_operator OR
-					li.rule_condition 
-						.field_type port
-						.field_operator Equal
-						.field_value 2
+					+mixin_ruleCondition("port","Equal",2)
 				li.rule_operator AND
 				ul.rule_conditions
-					li.rule_condition 
-						.field_type sentbyte
-						.field_operator Equal
-						.field_value 50
-
+					+mixin_ruleCondition("sentbyte","Equal","50")
 					li.rule_operator AND
-					li.rule_condition 
-						.field_type rcvdbyte
-						.field_operator Equal
-						.field_value 30
-
+					+mixin_ruleCondition("rcvdbyte","Equal","30")
 				li.rule_operator AND
 				li.rule_condition 
-					.field_type user
-					.field_operator Equal
-					.field_value saksham
+					+mixin_ruleCondition("user","Equal","saksham")
