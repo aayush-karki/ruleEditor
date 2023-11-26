@@ -18,18 +18,19 @@ block content
 			button#exportBtn.btn.btn_export Export
 
 		form.rules_container
+			//- +mixin_ruleConditions(["a", "b", "c","script","Equal","10.10.1.1","dstip","Equal","10.10.1.5"], ["and", "or"])
 			ul.rule_conditions
 				+mixin_ruleCondition("script","Equal","10.10.1.1")
-				li.rule_operator AND
+				+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue :"AND", opType: "rule"})
 				ul.rule_conditions
 					+mixin_ruleCondition("dstip","Equal","10.10.1.5")
-					li.rule_operator OR
+					+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue:"OR", opType: "rule"})
 					+mixin_ruleCondition("port","Equal",2)
-				li.rule_operator AND
+				+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue:"AND", opType: "rule"})
 				ul.rule_conditions
 					+mixin_ruleCondition("sentbyte","Equal","50")
-					li.rule_operator AND
+					+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue:"AND", opType: "rule"})
 					+mixin_ruleCondition("rcvdbyte","Equal","30")
-				li.rule_operator AND
+				+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue:"AND", opType: "rule"})
 				li.rule_condition 
 					+mixin_ruleCondition("user","Equal","saksham")

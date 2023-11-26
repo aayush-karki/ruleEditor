@@ -1,0 +1,22 @@
+//- @filename: mixin_dataOperator.pug
+//- @mixin
+//- This file contains mixin_operator input field
+
+//- @name mixin_operator
+//- @descripton it takes is a operatorData object as a parameter. It has a default value for classes
+//- @param operatorData: json object. It has 3 key value pairs: 
+//-       operatorPlaceholder,operatorValue, and opType.
+//-       operatorPlaceholder: It is the text that shows up when the input field is empty
+//-       operatorValue: It is the text value of the input field
+//-       opType: It defines a the type of operator field. This adds the class to the field.
+//-           It can only be rule or field
+//- use: +mixin_operator({operatorPlaceholder: "placeholderText", operatorValue:"valueText", opType: "type")
+//- useExample: +mixin_operator({operatorPlaceholder: "Rule Operator", operatorValue:"And", opType: "rule")
+mixin mixin_operator(operatorData={operatorPlaceholder: "", operatorValue :"", opType: ""})
+  input( 
+    class={"operator rule_operator" :operatorData.opType==="rule" }
+    class={"operator field_operator field_data" :operatorData.opType==="field" }
+    type="text" 
+    placeholder=operatorData.operatorPlaceholder 
+    value=operatorData.operatorValue
+  )

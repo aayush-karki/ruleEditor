@@ -1,9 +1,24 @@
 //- @filename: mixin_ruleCondition.pug
 //- @mixin
-//- rule condition component that contains field type, field operator, and  field value
+//- This file contains rule condition mixin and rule conditions mixin
 
+include .\mixin_dataOperator.pug
+
+//- mixin mixin_operator(operatorPlaceholder, operatorValue)
+//-   input(class=attributes.class type="text", placeholder=operatorPlaceholder value=operatorValue)
 mixin mixin_ruleCondition(fieldType="", fieldOperator="", fieldValue="")
   li.rule_condition
     input.field_data.field_type(type="text", placeholder="field type" value=fieldType)
-    input.field_data.field_operator(type="text", placeholder="field operator" value=fieldOperator)
+    //- +mixin_operator("field operator", fieldOperator)(class="field_data field_operator")
+    +mixin_operator({operatorPlaceholder: "Field operator",  operatorValue:fieldOperator, opType:"field"})
+    //- input.field_data.field_operator(type="text", placeholder="field operator" value=fieldOperator)
     input.field_data.field_value(type="text", placeholder="field value" value=fieldValue)
+
+//- if size of operatorsArg is x then ruleConditionsArg should have  6 + 3 * ( x - 1 )
+mixin mixin_ruleConditions(ruleConditionsArg, operatorsArg)
+  ul.rule_conditions
+    - var ruleArgIdx = 0
+    each operator in operatorsArg
+      +mixin_ruleCondition(ruleConditionsArg[ruleArgIdx++], ruleConditionsArg[ruleArgIdx++], ruleConditionsArg[ruleArgIdx++])
+      +mixin_operator({operatorPlaceholder: "Rule operator", operatorValue:operator,opType:"rule"})
+    +mixin_ruleCondition(ruleConditionsArg[ruleArgIdx++], ruleConditionsArg[ruleArgIdx++], ruleConditionsArg[ruleArgIdx++])
