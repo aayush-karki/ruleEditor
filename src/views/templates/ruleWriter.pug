@@ -13,6 +13,10 @@ block append scripts
 block content
 	.main
 		h1 Rules
+
+		.file
+			input#loadfileInput(type="file" accept=".json" hidden)
+
 		.buttons
 			button#loadBtn.btn.btn_load Load
 			button#exportBtn.btn.btn_export Export

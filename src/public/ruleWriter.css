@@ -29,8 +29,8 @@
 }
 
 .field_type {
-	flex-grow: 1;
-	flex-basis: 0;
+	/* flex-grow: 1;
+	flex-basis: 0; */
 }
 
 .field_operator {
