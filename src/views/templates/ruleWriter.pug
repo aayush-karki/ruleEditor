@@ -17,12 +17,15 @@ block content
 		.file
 			input#loadfileInput(type="file" accept=".json" hidden)
 
+		#ruleFormats.ruleFormats(hidden)
+			+mixin_ruleCondition()
+			+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue :"AND", opType: "rule"})
+
 		.buttons
 			button#loadBtn.btn.btn_load Load
 			button#exportBtn.btn.btn_export Export
 
 		form.rules_container
-			//- +mixin_ruleConditions(["a", "b", "c","script","Equal","10.10.1.1","dstip","Equal","10.10.1.5"], ["and", "or"])
 			ul.rule_conditions
 				+mixin_ruleCondition("script","Equal","10.10.1.1")
 				+mixin_operator({operatorPlaceholder: "Rule operator", operatorValue :"AND", opType: "rule"})

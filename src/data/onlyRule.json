@@ -1,0 +1,5 @@
+{
+	"operator": "Equal",
+	"field": "srcip",
+	"value": "10.10.1.1"
+}
