@@ -69,7 +69,7 @@
 		const rulesConditions = a_ruleConditions.conditions;
 
 		for (let i = 0; i < rulesConditions.length; ++i) {
-			const returnVal = convertJsonToHtml(rulesConditions[i], currTab);
+			const returnVal = convertJsonToHtml(rulesConditions[i]);
 
 			// check if the return is valid or not
 			if (returnVal === undefined) {
