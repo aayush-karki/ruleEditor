@@ -5,6 +5,7 @@
 extends layout
 
 include ..\mixins\mixin_ruleCondition.pug
+include ..\mixins\mixin_ruleAddDrd.pug
 
 block append scripts
 	script( src="ruleWriter.js" defer)
@@ -13,6 +14,13 @@ block append scripts
 block content
 	.main
 		h1 Rules
+
+		//- delete this
+		.hello
+			+mixin_ruleAddDrd()
+			+mixin_ruleAddDrd()
+			+mixin_ruleAddDrd()
+			+mixin_ruleAddDrd()
 
 		.file
 			input#loadfileInput(type="file" accept=".json" hidden)

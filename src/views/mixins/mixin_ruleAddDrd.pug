@@ -1,0 +1,23 @@
+//- @filename: mixin_ruleAddDrd.pug.pug
+//- @mixin
+//- This file contains a dropdown menu that contains list of options 
+//-         that users can select
+
+//- @name mixin_ruleAddDrd.pug
+//- @descripton it takes is a operatorData object as a parameter. It has a default value for classes
+//- @param operatorData: json object. It has 3 key value pairs: 
+//-       operatorPlaceholder,operatorValue, and opType.
+//-       operatorPlaceholder: It is the text that shows up when the input field is empty
+//-       operatorValue: It is the text value of the input field
+//-       opType: It defines a the type of operator field. This adds the class to the field.
+//-           It can only be rule or field
+//- use: +mixin_operator({operatorPlaceholder: "placeholderText", operatorValue:"valueText", opType: "type")
+//- useExample: +mixin_operator({operatorPlaceholder: "Rule Operator", operatorValue:"And", opType: "rule")
+mixin mixin_ruleAddDrd()
+  .rule_add_container
+    button.rule_addDrdbtn +
+    .rules_addDrd_content
+      button.rule_addBtn New Rule Above
+      button.rule_addBtn New Rule Below
+      button.rule_addBtn New Group Below
+      button.rule_addBtn New Group Above
