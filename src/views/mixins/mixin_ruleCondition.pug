@@ -3,6 +3,7 @@
 //- This file contains rule condition mixin and rule conditions mixin
 
 include .\mixin_dataOperator.pug
+include ..\mixins\mixin_ruleAddDrd.pug
 
 //- mixin mixin_operator(operatorPlaceholder, operatorValue)
 //-   input(class=attributes.class type="text", placeholder=operatorPlaceholder value=operatorValue)
@@ -13,6 +14,7 @@ mixin mixin_ruleCondition(fieldType="", fieldOperator="", fieldValue="")
     +mixin_operator({operatorPlaceholder: "Field operator",  operatorValue:fieldOperator, opType:"field"})
     //- input.field_data.field_operator(type="text", placeholder="field operator" value=fieldOperator)
     input.field_data.field_value(type="text", placeholder="field value" value=fieldValue)
+    +mixin_ruleAddDrd()
 
 //- if size of operatorsArg is x then ruleConditionsArg should have  6 + 3 * ( x - 1 )
 mixin mixin_ruleConditions(ruleConditionsArg, operatorsArg)
