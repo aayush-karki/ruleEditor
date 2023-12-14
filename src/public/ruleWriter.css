@@ -43,10 +43,6 @@
 	text-align: end;
 }
 
-[data-depth] {
-	margin-left: attr(data-depth em, 0);
-}
-
 .rule_add_container {
 	display: inline-block;
 	position: relative;
@@ -89,9 +85,4 @@
 
 .rule_add_container:hover .rule_addDrdbtn {
 	background-color: #3e8e41;
-}
-
-.hello {
-	display: flex;
-	flex-direction: column;
 }

@@ -7,12 +7,12 @@
 //- @descripton It lets user add a default rule or rule group
 //- use: +mixin_ruleAddDrd()
 //- useExample: +mixin_ruleAddDrd()
-mixin mixin_ruleAddDrd()
+mixin mixin_ruleAddDrd
   .rule_add_container
-    button.rule_addDrdbtn +
+    button.rule_addDrdbtn(type="button") +
     .rules_addDrd_content
-      button.rule_addBtn New Rule Above
-      button.rule_addBtn New Rule Below
-      button.rule_addBtn New Group Below
-      button.rule_addBtn New Group Above
+      button#a.rule_addBtn.rule_addNewRuleAbove(type="button" onclick="newRuleBelowOnClick()") New Rule Above
+      button.rule_addBtn.rule_addNewRuleBelow(type="button") New Rule Below
+      button.rule_addBtn.rule_addNewGroupAbove(type="button") New Group Below
+      button.rule_addBtn.rule_addNewGroupBelow(type="button") New Group Above
 

@@ -18,7 +18,7 @@
 
 		// base case 2: ruleCondition has the rule
 		if (
-			ruleConditionitems.length === 3 &&
+			ruleConditionitems.length === 4 &&
 			ruleConditionitems[0].classList.contains("field_data")
 		) {
 			return {
